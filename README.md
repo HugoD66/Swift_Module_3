@@ -41,7 +41,7 @@ Créer une application **CLI (Command Line Interface)** capable de :
 ### 1️⃣ Cloner le repository
 
 ``` bash
-git clone <URL_DU_REPO>
+git clone git@github.com:HugoD66/Swift_Module_3.git
 cd TP3_WeatherAPI_Starter
 ```
 

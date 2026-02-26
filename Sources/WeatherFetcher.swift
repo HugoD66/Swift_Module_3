@@ -3,8 +3,6 @@ import Foundation
 import FoundationNetworking
 #endif
 
-// HELPER: Wrapper cross-platform pour URLSession (fourni)
-// Cette fonction fonctionne sur macOS, Linux et Windows
 @available(macOS 10.15, *)
 func fetchData(from url: URL) async throws -> (Data, URLResponse) {
 #if os(macOS)
@@ -29,19 +27,10 @@ func fetchData(from url: URL) async throws -> (Data, URLResponse) {
     }
 }
 
-// 4. FETCH FUNCTIONS (8 pts)
-
-// TODO 4.1: Fonction buildWeatherURL(latitude:longitude:) -> URL? (1 pt)
-// URL: https://api.open-meteo.com/v1/forecast?latitude=XX&longitude=YY&current_weather=true
-
-
-
 func buildWeatherURL(latitude: Double, longitude: Double) -> URL? {
     let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&current_weather=true"
     return URL(string: urlString)
 }
-
-
 
 func fetchWeather(for city: City) async throws -> CurrentWeather {
     guard let url = buildWeatherURL(latitude: city.latitude, longitude: city.longitude) else {
